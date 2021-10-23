@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="https://unpkg.com/amazon-kinesis-video-streams-webrtc/dist/kvs-webrtc.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.585.0.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -18,32 +19,29 @@
         <h3>Local Stream</h3>
         <video id="webcamVideo" autoplay playsinline></video>
       </span>
+
       <span>
         <h3>Remote Stream</h3>
         <video id="remoteVideo" autoplay playsinline></video>
       </span>
     </div>
 
-    <button id="webcamButton">Start webcam</button>
-    <h2>2. Create a new Call</h2>
-    <button id="callButton" disabled>Create Call (offer)</button>
+    <h2>2. Go Live</h2>
+    <button id="goLiveButton">Start</button>
 
-    <h2>3. Join a Call</h2>
+    <h2>3. Join a stream</h2>
     <p>Answer the call from a different browser window or device</p>
 
     <input id="callInput" />
-    <button id="answerButton" disabled>Answer</button>
+    <button id="answerButton">Answer</button>
 
     <h2>4. Hangup</h2>
 
     <button id="hangupButton" disabled>Hangup</button>
 
-    <script type="text/JavaScript">
-        $(document).ready(function(e){
-
-            
-
-        });
-    </script>
+    <script src="./createUtilities.js"></script>
+    <script src="./master.js"></script>
+    <script src="./viewer.js"></script>
+    <script type="text/JavaScript" src="./kvsstream.js"></script>
   </body>
 </html>
